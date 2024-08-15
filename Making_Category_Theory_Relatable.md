@@ -10,9 +10,9 @@ For example, we can take $\begin{pmatrix} 1 & 2 \\\\ 5 & 7 \end{pmatrix}$, and i
 
 So, when we solve a linear system $A \vec x = \vec b$ using row operations, we can view it as multiplying on the left by a series of matrices, $R_1, R_2, \dots$, until we reduce the system to something more tractable.
 
-That's all well and good, but _why_ does the trick work? Why should "following the identity" matrix give us all the information about the row operation? And what on earth does this have to do with Category Theory?
+That's all well and good, but _why_ does the trick work? Why should "following the identity" matrix give us all the information about the row operation? And what on earth does this have to do with category theory?
 
-As it turns out, the answer lies in focusing not on what the identity matrix "is", but what it "does", how it relates to other matrices. And to do this, we will take a detour into studying two of the fundamental concepts of Category Theory - _covariance_ and _contravariance_.
+As it turns out, the answer lies in focusing not on what the identity matrix "is", but what it "does", how it relates to other matrices. And to do this, we will take a detour into studying two of the fundamental concepts of category theory - _covariance_ and _contravariance_.
 ## Covariance
 
 Let's go back to basics - and I mean, the _real_ basics. Addition and multiplication!
@@ -100,10 +100,10 @@ There's a few useful things we immediately get from this result:
 
 Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects and the Hom functor throughout this piece.
 
-But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in Category Theory - the Yoneda Lemma. It turns out that this idea of "follow where the identity goes" is the core of the result. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
+But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in category theory - the Yoneda Lemma. It turns out that this idea of "follow where the identity goes" is the core of the result. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
 
-Category Theory is normally thought of as very abstract. And indeed, working with generic categories, or understanding the full statement of the Yoneda Lemma, requires a lot of familiarity with abstraction. But this abstraction doesn't necessarily translate to _specific instances_ of categorical theorems or ideas, such as this matrix example.
+Category theory is normally thought of as very abstract. And indeed, working with generic categories, or understanding the full statement of the Yoneda Lemma, requires a lot of familiarity with abstraction. But this abstraction doesn't necessarily translate to _specific instances_ of categorical theorems or ideas, such as this matrix example.
 
-Indeed, I'm a physicist. I don't really _like_ abstraction - I'm at home performing calculations, working in coordinates, and extracting physical predictions from mathematical models. But I love Category Theory! What I want to show is that Category Theory can be viewed as a bag of techniques and tricks, giving you tools to "think categorically", that can be applied to concrete, tangible problems. Perhaps that's something everyone can appreciate!
+Indeed, I'm a physicist. I don't really _like_ abstraction - I'm at home performing calculations, working in coordinates, and extracting physical predictions from mathematical models. But I love category theory! What I want to show is that category theory can be viewed as a bag of techniques and tricks, giving you tools to "think categorically", that can be applied to concrete, tangible problems. Perhaps that's something everyone can appreciate!
 
-I'm planning to continue writing articles explaining Mathematics and Physics. If you'd like to support me, consider [buying me a coffee](https://ko-fi.com/pseudonium)!
+I'm planning to continue writing articles explaining Mathematics and Physics. If you'd like to support me, consider [buying me a coffee](https://ko-fi.com/pseudonium).
