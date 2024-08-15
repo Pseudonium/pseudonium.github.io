@@ -105,3 +105,5 @@ But perhaps most surprisingly, this result is a corollary of one of the first th
 Category Theory is normally thought of as very abstract. And indeed, working with generic categories, or understanding the full statement of the Yoneda Lemma, requires a lot of familiarity with abstraction. But this abstraction doesn't necessarily translate to _specific instances_ of categorical theorems or ideas, such as this matrix example.
 
 Indeed, I'm a physicist. I don't really _like_ abstraction - I'm at home performing calculations, working in coordinates, and extracting physical predictions from mathematical models. But I love Category Theory! What I want to show is that Category Theory can be viewed as a bag of techniques and tricks, giving you tools to "think categorically", that can be applied to concrete, tangible problems. Perhaps that's something everyone can appreciate!
+
+I'm planning to continue writing articles explaining Mathematics and Physics. If you'd like to support me, consider [buying me a coffee](https://ko-fi.com/pseudonium)!
