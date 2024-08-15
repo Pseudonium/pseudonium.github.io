@@ -1,3 +1,5 @@
+# Making Category Theory Relatable
+
 Matrices are one of the first tools you meet in university math. They let you package together systems of linear equations, which can then be solved algorithmically with Gaussian elimination. This is a natural generalisation of the school-level treatment of simultaneous equations; you can implement addition and multiplication of equations as row operations on the corresponding matrix, reducing it to row echelon form.
 
 There's a trick which relates these operations to standard matrix multiplication. Any row operation on some matrix $A$ can be implemented by just multiplying on the left with a fixed matrix $M$ - and the way you find $M$ is just by applying the operation to the identity matrix!
@@ -9,7 +11,7 @@ So, when we solve a linear system $A \vec x = \vec b$ using row operations, we c
 That's all well and good, but _why_ does the trick work? Why should "following the identity" matrix give us all the information about the row operation? And what on earth does this have to do with Category Theory?
 
 As it turns out, the answer lies in focusing not on what the identity matrix "is", but what it "does", how it relates to other matrices. And to do this, we will take a detour into studying two of the fundamental concepts of Category Theory - _covariance_ and _contravariance_.
-# Covariance
+## Covariance
 
 Let's go back to basics - and I mean, the _real_ basics. Addition and multiplication!
 
@@ -34,7 +36,7 @@ And again, it's easy to deduce this property by viewing numbers as sizes of fini
 These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which let's us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives".
 
 And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead. What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
-# Contravariance
+## Contravariance
 
 After you get comfortable with arithmetic, you might try using numbers to describe real-world phenomena. Other than "size", another common way numbers get used is as _measurements_.
 
@@ -57,7 +59,7 @@ We see that the $x$-translation by $5$ units acts in the input - so, to make the
 
 Now that we've met covariance and contravariance, let's get back to matrices!
 
-# Matrices
+## Matrices
 
 It turns out it'll be a little easier to consider _column_ operations first - we'll then transpose our result to get the version for row operation.
 
@@ -91,7 +93,7 @@ There's a few useful things we immediately get from this result:
 - A row/column operation is invertible if and only if the corresponding matrix is invertible.
 - Row and column operations commute with each other! This follows from the associativity of matrix multiplication.
 
-# The Yoneda Lemma
+## The Yoneda Lemma
 
 
 Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects and the Hom functor throughout this piece.
