@@ -16,14 +16,5 @@ $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
 $a_{b_{c_{d_{e_n}}}}$
 
 
-% https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ==
-\[\begin{tikzcd}
-	A && {A \times B} && B \\
-	\\
-	&& C
-	\arrow[from=1-3, to=1-1]
-	\arrow[from=1-3, to=1-5]
-	\arrow[from=3-3, to=1-1]
-	\arrow[dashed, from=3-3, to=1-3]
-	\arrow[from=3-3, to=1-5]
-\end{tikzcd}\]
+<!-- https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ== -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ==&embed" width="712" height="432" style="border-radius: 8px; border: none;"></iframe>
