@@ -71,7 +71,7 @@ It turns out that column operations are "relational", in the following sense. If
 
 
 
-This follows fairly quickly from the definition of matrix multiplication - the $j$th column of $MC(A)$ is $M$ applied to the $j$th column of $C(A)$, which is of the form $\sum \lambda_{ij} A_i$ for $A_i$ the $i$th column of $A$. We then just apply linearity to get that $[M C(A)]_j = M \sum \lambda_{ij} A_i = \sum \lambda_{ij} M A_i = [C(MA)]_j = [C(B)]_j$, where the bracket notation denotes the $j$th column.
+This follows fairly quickly from the definition of matrix multiplication - the $j$th column of $MC(A)$ is $M$ applied to the $j$th column of $C(A)$, which is of the form $\sum \lambda_{ij} A_i$ for $A_i$ the $i$th column of $A$. We then just apply linearity to get that \([M C(A)]\_j = M \sum \lambda_{ij} A_i = \sum \lambda_{ij} M A_i = [C(MA)]_j = [C(B)]_j\), where the bracket notation denotes the $j$th column.
 
 How does this help us? Well, now that we understand covariance, we're ready to employ a trick - we can write $A = AI$ for $I$ the identity matrix. Then $C(A) = C(A I) = A C(I)$. And that gives our result - the column operation is just right-multiplication by some matrix, and we find it by applying it to the identity matrix!
 
