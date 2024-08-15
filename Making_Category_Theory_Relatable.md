@@ -1,5 +1,7 @@
 # Making Category Theory Relatable
 
+#SoMEpi
+
 Matrices are one of the first tools you meet in university math. They let you package together systems of linear equations, which can then be solved algorithmically with Gaussian elimination. This is a natural generalisation of the school-level treatment of simultaneous equations; you can implement addition and multiplication of equations as row operations on the corresponding matrix, reducing it to row echelon form.
 
 There's a trick which relates these operations to standard matrix multiplication. Any row operation on some matrix $A$ can be implemented by just multiplying on the left with a fixed matrix $M$ - and the way you find $M$ is just by applying the operation to the identity matrix!
