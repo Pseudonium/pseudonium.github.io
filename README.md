@@ -1,20 +1,10 @@
-# pseudonium.github.io
+# Pseudonium's Blog
 
+Welcome! I just finished a masters degree in Mathematics, and will be starting a PhD in Condensed Matter Physics this October. I love it because it feels like I’m going to get to learn how to do magic in real life!
 
-hiiiiiii
+I’m a physicist. But I also like lots of math, from calculus to category theory. And I’m especially interested in ways to improve math education. Feel free to ask me about any of those!
 
+Outside that, I love playing video games, watching anime, playing frisbee, playing piano and singing.
 
-[profile](https://github.com/Pseudonium)
+## Articles
 
-
-Hmm i wonder if the maths broke things...
-
-$2 + 2 = 4 - 1 = 3$ quick mafs
-
-$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
-
-$a_{b_{c_{d_{e_n}}}}$
-
-
-<!-- https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ==&embed" width="300" height="500" style="border-radius: 3px; border: none;"></iframe>
