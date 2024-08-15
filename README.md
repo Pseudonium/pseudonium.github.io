@@ -8,4 +8,4 @@ Outside that, I love playing video games, watching anime, playing frisbee, playi
 
 ## Articles
 
-- [Making Category Theory Relatable]([Making Category Theory Relatable](https://pseudonium.github.io/Making_Category_Theory_Relatable))
+- [Making Category Theory Relatable](https://pseudonium.github.io/Making_Category_Theory_Relatable)
