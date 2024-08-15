@@ -28,7 +28,8 @@ We can make a similar observation with multiplication. $2 \times 9$ gives the sa
 
 And again, it's easy to deduce this property by viewing numbers as sizes of finite sets. We can take the cartesian product and make a grid of all possible choices, and then count them up, or we can take the sizes individually, and then multiply the numbers together! Commutativity simply follows from transporting the commutativity of "product" along the "size" function.
 
-![[Yoneda Talk Image 5.png|500]]
+![Multiplication Diagram](https://github.com/user-attachments/assets/223a4cd3-4e95-4985-9858-9a3be7d0ba9c)
+
 
 These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which let's us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives".
 
@@ -39,15 +40,18 @@ After you get comfortable with arithmetic, you might try using numbers to descri
 
 Say you're measuring a stick. Given a unit of measurement, you get back a numerical value - say, centimetres gives 50. And given a different one, you get a different value - metres gives 0.5. There's a way to relate these inputs - a metre is 100 centimetres. And the way to relate the outputs "goes backwards" - 50 is 100 times 0.5.
 
-![[Yoneda Talk Image 10.png|300]]
+![Measurement Diagram](https://github.com/user-attachments/assets/37e3d783-1348-43d5-a021-3c774718f233)
+
 
 Of course, here you can just view it as an example of covariance since the output arrow is reversible. But I think it's useful to emphasise the "inverse" relation on outputs - in fact, the same reasoning is why vector components transform contravariantly. We just consider a function assigning, to each basis, the components of the vector in that basis.
 
-![[Pasted image 20240814214745.png|300]]
+![image](https://github.com/user-attachments/assets/3bfd3ac5-1178-4325-8033-fa00a06e5135)
+
 
 Moreover, what's often useful is that covariance and contravariance can combine to give _invariance_. This is why we always write down measurements with both the unit and the number - the unit changes covariantly, the number changes contravariantly, and together they give an invariant notion: "length"! And with vectors, one can "contract" covariant and contravariant indices together.
 
-You also might remember contravariance from school when having to work with graph transformations. Translating a function $y = f(x)$ by, say, $5$ units to the right requires using the equation $y = f(x - 5)$. A diagram can help make this clearer: ![[Pasted image 20240814213339.png|300]]
+You also might remember contravariance from school when having to work with graph transformations. Translating a function $y = f(x)$ by, say, $5$ units to the right requires using the equation $y = f(x - 5)$. A diagram can help make this clearer: ![image](https://github.com/user-attachments/assets/297547f8-27e8-46af-b485-50e8cef8faa5)
+
 
 We see that the $x$-translation by $5$ units acts in the input - so, to make the arrows match up properly, we must apply the _inverse_ transformation first, subtracting $-5$. It's a general principle that functions are covariant in the output (transformations in the $y$ direction), and contravariant in the input (transformations in the $x$ direction).
 
@@ -61,19 +65,23 @@ So, a column operation takes in a matrix $A$, and outputs another matrix $C(A)$,
 
 It turns out that column operations are "relational", in the following sense. If there's a way to relate inputs $A$ and $B$, specifically $B = MA$, then there's a way to relate the outputs, so $C(B) = M C(A)$.
 
-![[Yoneda Talk Image 11.png|300]]
+![image](https://github.com/user-attachments/assets/8ec0c479-bd6e-4a97-9f10-029f0af7fe79)
+
+
 
 This follows fairly quickly from the definition of matrix multiplication - the $j$th column of $MC(A)$ is $M$ applied to the $j$th column of $C(A)$, which is of the form $\sum \lambda_{ij} A_i$ for $A_i$ the $i$th column of $A$. We then just apply linearity to get that $[M C(A)]_j = M \sum \lambda_{ij} A_i = \sum \lambda_{ij} M A_i = [C(MA)]_j = [C(B)]_j$, where the bracket notation denotes the $j$th column.
 
 How does this help us? Well, now that we understand covariance, we're ready to employ a trick - we can write $A = AI$ for $I$ the identity matrix. Then $C(A) = C(A I) = A C(I)$. And that gives our result - the column operation is just right-multiplication by some matrix, and we find it by applying it to the identity matrix!
 
-![[Pasted image 20240815113758.png|300]]
+![image](https://github.com/user-attachments/assets/5354b829-ac0c-4a15-96e0-8d77eec3086b)
+
 
 We see that what the identity matrix "does" is relate to every other matrix in a _unique_ way - in category theory, this would be called an "initial object".
 
 How about for row operations? The key insight is that we can implement row operations via "conjugating" a column operation by transpose, as shown:
 
-![[Pasted image 20240815114250.png|300]]
+![image](https://github.com/user-attachments/assets/0db1cc99-f664-44d1-a02c-d2c9597ee0d5)
+
 
 We see that "contravariance" generalises this idea of conjugation. In any case, we have that if $B = AM$, then $R(B) = C(B^T)^T = C((AM)^T)^T = C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$. And so $R(A) = R(IA) = R(I) A$, meaning that row operations arise from multiplying on the left by a fixed matrix!
 
