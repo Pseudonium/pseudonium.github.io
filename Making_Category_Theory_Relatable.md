@@ -1,5 +1,3 @@
-# Introduction
-
 Matrices are one of the first tools you meet in university math. They let you package together systems of linear equations, which can then be solved algorithmically with Gaussian elimination. This is a natural generalisation of the school-level treatment of simultaneous equations; you can implement addition and multiplication of equations as row operations on the corresponding matrix, reducing it to row echelon form.
 
 There's a trick which relates these operations to standard matrix multiplication. Any row operation on some matrix $A$ can be implemented by just multiplying on the left with a fixed matrix $M$ - and the way you find $M$ is just by applying the operation to the identity matrix!
@@ -21,7 +19,8 @@ But there's another perspective on numbers which makes the commutative property 
 
 Or, you can take their sizes individually, and then... add the numbers together!
 
-![[Yoneda Talk Image 4.png|400]]
+<!-- https://q.uiver.app/#q=WzAsNCxbMCwzLCIo8J+Nk/CfjZMs8J+NjPCfjYzwn42MKSJdLFswLDAsIigyLCAzKSJdLFszLDAsIjUiXSxbMywzLCLwn42T8J+Nk/CfjYzwn42M8J+NjCJdLFswLDEsIlxcdGV4dHtTaXplfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDIsIlxcdGV4dHtTaXplfSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIlxcdGV4dHtVbmlvbn0iLDJdLFsxLDIsIlxcdGV4dHtBZGRpdGlvbn0iXV0= -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMCwzLCIo8J+Nk/CfjZMs8J+NjPCfjYzwn42MKSJdLFswLDAsIigyLCAzKSJdLFszLDAsIjUiXSxbMywzLCLwn42T8J+Nk/CfjYzwn42M8J+NjCJdLFswLDEsIlxcdGV4dHtTaXplfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDIsIlxcdGV4dHtTaXplfSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIlxcdGV4dHtVbmlvbn0iLDJdLFsxLDIsIlxcdGV4dHtBZGRpdGlvbn0iXV0=&embed" width="400" height="560" style="border-radius: 3px; border: none;"></iframe>
 
 Our "size" function here relates inputs to outputs, as all functions do. But moreover, it's _relational_ - given a way to relate the inputs, "union", there's a corresponding way to relate the outputs, "addition"! And this is what allows us to see commutativity of addition - "union" is obviously commutative as an operation on collections (up to bijection), and we can transport this commutativity along the "size" function.
 
