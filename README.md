@@ -17,4 +17,4 @@ $a_{b_{c_{d_{e_n}}}}$
 
 
 <!-- https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ== -->
-<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ==&embed" width="500" style="border-radius: 8px; border: none;"></iframe>
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNCxbMiwwLCJBIFxcdGltZXMgQiJdLFsyLDIsIkMiXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsxLDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDJdLFsxLDNdLFswLDJdLFswLDNdXQ==&embed" width="700" style="border-radius: 3px; border: none;"></iframe>
