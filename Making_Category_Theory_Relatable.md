@@ -4,7 +4,7 @@ Matrices are one of the first tools you meet in university math. They let you pa
 
 There's a trick which relates these operations to standard matrix multiplication. Any row operation on some matrix $A$ can be implemented by just multiplying on the left with a fixed matrix $M$ - and the way you find $M$ is just by applying the operation to the identity matrix!
 
-For example, we can take $\begin{pmatrix} 1 & 2 \\ 5 & 7 \end{pmatrix}$, and implement the operation of subtracting $5$ times the first row from the second row, to leave us with $\begin{pmatrix} 1 & 2 \\ 0 & -3 \end{pmatrix}$. Simply apply the same operation to the identity matrix, so $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ goes to $\begin{pmatrix} 1 & 0 \\ -5 & 1 \end{pmatrix}$, and one can verify that $\begin{pmatrix} 1 & 0 \\ -5 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 5 & 7 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 0 & -3 \end{pmatrix}$.
+For example, we can take $\begin{pmatrix} 1 & 2 \\\\ 5 & 7 \end{pmatrix}$, and implement the operation of subtracting $5$ times the first row from the second row, to leave us with $\begin{pmatrix} 1 & 2 \\\\ 0 & -3 \end{pmatrix}$. Simply apply the same operation to the identity matrix, so $\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \end{pmatrix}$ goes to $\begin{pmatrix} 1 & 0 \\\\ -5 & 1 \end{pmatrix}$, and one can verify that $\begin{pmatrix} 1 & 0 \\\\ -5 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 \\\\ 5 & 7 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\\\ 0 & -3 \end{pmatrix}$.
 
 So, when we solve a linear system $A \vec x = \vec b$ using row operations, we can view it as multiplying on the left by a series of matrices, $R_1, R_2, \dots$, until we reduce the system to something more tractable.
 
