@@ -134,4 +134,6 @@ Category theory is normally thought of as very abstract. And indeed, working wit
 
 Indeed, I'm a physicist. I don't really _like_ abstraction - I'm at home performing calculations, working in coordinates, and extracting physical predictions from mathematical models. But I love category theory! What I want to show is that category theory can be viewed as a bag of techniques and tricks, giving you tools to "think categorically", that can be applied to concrete, tangible problems. Perhaps that's something everyone can appreciate!
 
+[Discuss this article on Reddit](https://www.reddit.com/r/math/comments/1et3y2d/making_category_theory_relatable/).
+
 I'm planning to continue writing articles explaining Mathematics and Physics. If you'd like to support me, consider [buying me a coffee](https://ko-fi.com/pseudonium).
