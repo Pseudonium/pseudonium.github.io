@@ -28,6 +28,12 @@ Or, you can take their sizes individually, and then... add the numbers together!
 
 Our "size" function here relates inputs to outputs, as all functions do. But moreover, it's _relational_ - given a way to relate the inputs, "union", there's a corresponding way to relate the outputs, "addition"! And this is what allows us to see commutativity of addition - "union" is obviously commutative as an operation on collections (up to bijection), and we can transport this commutativity along the "size" function.
 
+
+Starting with
+![Addition Commutativity](https://github.com/user-attachments/assets/fe90ae7b-8531-40d8-88ff-52650e0aeb99)
+we can obtain
+![Addition Numerical Commutativity](https://github.com/user-attachments/assets/b3f856a2-dbcf-48d4-9cd0-6a59e2366435)
+
 We can make a similar observation with multiplication. $2 \times 9$ gives the same _result_ as $9 \times 2$, but is distinct _operationally_. The former requires you to add together 9 copies of "2", whereas the latter requires you to add together 2 copies of "9". Commutativity gives you the freedom to choose which route to take.
 
 And again, it's easy to deduce this property by viewing numbers as sizes of finite sets. We can take the cartesian product and make a grid of all possible choices, and then count them up, or we can take the sizes individually, and then multiply the numbers together! Commutativity simply follows from transporting the commutativity of "product" along the "size" function.
@@ -52,7 +58,7 @@ Of course, here you can just view it as an example of covariance since the outpu
 ![image](https://github.com/user-attachments/assets/3bfd3ac5-1178-4325-8033-fa00a06e5135)
 
 
-Moreover, what's often useful is that covariance and contravariance can combine to give _invariance_. This is why we always write down measurements with both the unit and the number - the unit changes covariantly, the number changes contravariantly, and together they give an invariant notion: "length"! And with vectors, one can "contract" covariant and contravariant indices together.
+Moreover, what's often useful is that covariance and contravariance can combine to give _invariance_. This is why we always write down measurements with both the unit and the number - the unit changes covariantly, the number changes contravariantly, and together they give an invariant notion: "length"! With vectors, specifying both the basis and the components gives the invariant notion of "arrow in space".
 
 You also might remember contravariance from school when having to work with graph transformations. Translating a function $y = f(x)$ by, say, $5$ units to the right requires using the equation $y = f(x - 5)$. A diagram can help make this clearer: ![image](https://github.com/user-attachments/assets/297547f8-27e8-46af-b485-50e8cef8faa5)
 
@@ -63,44 +69,66 @@ Now that we've met covariance and contravariance, let's get back to matrices!
 
 ## Matrices
 
+### Column Operations
+
 It turns out it'll be a little easier to consider _column_ operations first - we'll then transpose our result to get the version for row operation.
 
-So, a column operation takes in a matrix $A$, and outputs another matrix $C(A)$, such that each column of $C(A)$ is a fixed linear combination of the columns of $A$.
+So, a column operation takes in a matrix $A$, and outputs another matrix $C(A)$, such that each column of $C(A)$ is a linear combination of the columns of $A$. This linear combination is allowed to vary from column to column - for example, perhaps we swap the first two columns and leave all others unchanged. But it's not allowed to depend explicitly on $A$ itself.
 
 It turns out that column operations are "relational", in the following sense. If there's a way to relate inputs $A$ and $B$, specifically $B = MA$, then there's a way to relate the outputs, so $C(B) = M C(A)$.
 
 ![image](https://github.com/user-attachments/assets/8ec0c479-bd6e-4a97-9f10-029f0af7fe79)
 
+All we need to prove this are the definitions of column operations and matrix multiplication! Focusing on the first column, we have that $$[C(A)]\_1 = \lambda\_{11} [A]\_1 + \lambda\_{12} [A]\_2 + \dots + \lambda\_{1n} [A]\_n$$, where the bracket notation denotes the operation of taking the $j$th column. If we were swapping the first two columns, then we'd have $\lambda\_{12} = 1$ and $\lambda\_{1j} = 0$ otherwise, $\lambda\_{21} = 1$ and $\lambda\_{22} = 0$ otherwise. This just expresses the idea that the column operation consists of applying a linear combination to the columns of $A$.
 
+The point is that this operation of "taking the $j$th column" interacts very nicely with matrix multiplication! We can express this in the following diagram:
 
-This follows fairly quickly from the definition of matrix multiplication - the $j$th column of $MC(A)$ is $M$ applied to the $j$th column of $C(A)$, which is of the form $\sum \lambda_{ij} A_i$ for $A_i$ the $i$th column of $A$. We then just apply linearity to get that $[M C(A)]\_j = M \sum \lambda_{ij} A_i = \sum \lambda_{ij} M A_i = [C(MA)]_j = [C(B)]_j$, where the bracket notation denotes the $j$th column.
+![image](https://github.com/user-attachments/assets/76ff5a64-deba-4c02-80bf-5f5c6a7d0914)
 
-How does this help us? Well, now that we understand covariance, we're ready to employ a trick - we can write $A = AI$ for $I$ the identity matrix. Then $C(A) = C(A I) = A C(I)$. And that gives our result - the column operation is just right-multiplication by some matrix, and we find it by applying it to the identity matrix!
+Indeed, matrix multiplication is _defined_ so that this diagram "commutes" - both ways of getting from the bottom-left corner to the top-right corner give the same _result_, even though the _operations performed_ are different. This lets us deduce that $$[MC(A)]_1 = M [C(A)]_1 = M (\lambda\_{11} [A]\_1 + \lambda\_{12} [A]\_2 + \dots + \lambda\_{1n} [A]\_n)$$.
 
-![image](https://github.com/user-attachments/assets/5354b829-ac0c-4a15-96e0-8d77eec3086b)
+But matrices, by definition, act linearly! So, we can distribute $M$ across the linear combination, and obtain:
 
+$$M (\lambda\_{11} [A]\_1 + \lambda\_{12} [A]\_2 + \dots + \lambda\_{1n} [A]\_n) = \lambda_{11} M [A]\_1 + \dots + \lambda\_{1n} M [A]\_n$$
 
-We see that what the identity matrix "does" is relate to every other matrix in a _unique_ way - in category theory, this would be called an "initial object".
+And finally, by the definition of matrix multiplication, we can "pass M through the brackets", to finally get:
 
-How about for row operations? The key insight is that we can implement row operations via "conjugating" a column operation by transpose, as shown:
+$$\lambda_{11} M [A]\_1 + \dots + \lambda\_{1n} M [A]\_n = \lambda_{11} [MA]\_1 + \dots + \lambda\_{1n} [MA]\_n = [C(MA)]_1 = [C(B)]_1$$, where we recall that $B = MA$.
+
+Extending this logic to all the other columns, we've successfully proven that $C(B) = C(MA) = M C(A)$!
+
+How does this help us? Well, now that we understand covariance, we're ready to employ a trick - we can write $X = XI$ for $I$ the identity matrix of the appropriate size, and $X$ our starting matrix. Then, using $M = X$ and $A = I$, we get $C(X) = C(X I) = X C(I)$. And that gives our result - the column operation is just right-multiplication by some matrix, and we find it by applying it to the identity matrix!
+
+![image](https://github.com/user-attachments/assets/f901c9f7-80d3-43ea-8df5-59b82d3f433e)
+
+We see that what the identity matrix "does" is relate to every other matrix in a _unique_ way - in category theory, this would be called an "initial object". And that's what lets us describe the entire column operation by a single matrix - the result of the column operation on the identity matrix.
+
+### Row Operations
+
+How about for row operations? These take in a matrix $A$ and produce a matrix $R(A)$, such that each _row_ of $R(A)$ is a linear combination of the rows of $A$, where again this linear combination cannot depend on $A$ but can vary from row to row. The definition of matrix multiplication won't particularly help us here, unfortunately - but there's still hope!
+
+The key insight is that we can implement row operations via "conjugating" a column operation by transpose, as shown:
 
 ![image](https://github.com/user-attachments/assets/0db1cc99-f664-44d1-a02c-d2c9597ee0d5)
 
+In other words, we can apply the row operation by first swapping rows and columns, then applying a related column operation (using the same linear combinations as the row operation), and then transposing again. We see that "contravariance" generalises this idea of conjugation, and gives us the formula $R(A) = C(A^T)^T$.
 
-We see that "contravariance" generalises this idea of conjugation. In any case, we have that if $B = AM$, then $R(B) = C(B^T)^T = C((AM)^T)^T = C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$. And so $R(A) = R(IA) = R(I) A$, meaning that row operations arise from multiplying on the left by a fixed matrix!
+In any case, we have that if $B = AM$, then $R(B) = C(B^T)^T = C((AM)^T)^T = C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$. And so $R(X) = R(IX) = R(I) X$, meaning that row operations arise from multiplying on the left by a fixed matrix!
 
 There's a few useful things we immediately get from this result:
 - Composing row/column operations can be implemented by multiplying the corresponding matrices.
 - By taking determinants, we see that any row/column operation only scales the determinant of the matrix by a constant factor, $\det(R(I))$ or $\det(C(I))$ respectively, when acting on square matrices.
 - A row/column operation is invertible if and only if the corresponding matrix is invertible.
-- Row and column operations commute with each other! This follows from the associativity of matrix multiplication.
+- Row and column operations commute with each other! Applying a row operation to $X$ means multiplying on the left by some $M$, and applying a column operation means multiplying on the right by some $N$. But $(MX)N = M(XN)$, since matrix multiplication is associative.
 
 ## The Yoneda Lemma
 
 
-Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects and the Hom functor throughout this piece.
+Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects, commutative diagrams and the Hom bifunctor throughout this piece.
 
-But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in category theory - the Yoneda Lemma. It turns out that this idea of "follow where the identity goes" is the core of the result. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
+But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in category theory - the Yoneda Lemma. Informally, it tells you that there's an equivalence between what an object "is" and what it "does", how it relates to other things, and how to use it. And as we saw, applying that idea to the identity matrix let us deduce the entire form of the row/column operation.
+
+It turns out that this idea of "follow where the identity goes" is the core of the result, even when you get to the formal proof of the lemma. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
 
 Category theory is normally thought of as very abstract. And indeed, working with generic categories, or understanding the full statement of the Yoneda Lemma, requires a lot of familiarity with abstraction. But this abstraction doesn't necessarily translate to _specific instances_ of categorical theorems or ideas, such as this matrix example.
 
