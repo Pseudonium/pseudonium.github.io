@@ -28,8 +28,11 @@ Or, you can take their sizes individually, and then... add the numbers together!
 
 Our "size" function here relates inputs to outputs, as all functions do. But moreover, it's _relational_ - given a way to relate the inputs, "union", there's a corresponding way to relate the outputs, "addition"! And this is what allows us to see commutativity of addition - "union" is obviously commutative as an operation on collections (up to bijection), and we can transport this commutativity along the "size" function.
 
-![Addition Commutativity](https://github.com/user-attachments/assets/fe90ae7b-8531-40d8-88ff-52650e0aeb99)
 
+Starting with
+![Addition Commutativity](https://github.com/user-attachments/assets/fe90ae7b-8531-40d8-88ff-52650e0aeb99)
+we can obtain
+![Addition Numerical Commutativity](https://github.com/user-attachments/assets/b3f856a2-dbcf-48d4-9cd0-6a59e2366435)
 
 We can make a similar observation with multiplication. $2 \times 9$ gives the same _result_ as $9 \times 2$, but is distinct _operationally_. The former requires you to add together 9 copies of "2", whereas the latter requires you to add together 2 copies of "9". Commutativity gives you the freedom to choose which route to take.
 
