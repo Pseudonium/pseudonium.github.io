@@ -28,6 +28,9 @@ Or, you can take their sizes individually, and then... add the numbers together!
 
 Our "size" function here relates inputs to outputs, as all functions do. But moreover, it's _relational_ - given a way to relate the inputs, "union", there's a corresponding way to relate the outputs, "addition"! And this is what allows us to see commutativity of addition - "union" is obviously commutative as an operation on collections (up to bijection), and we can transport this commutativity along the "size" function.
 
+![Addition Commutativity](https://github.com/user-attachments/assets/fe90ae7b-8531-40d8-88ff-52650e0aeb99)
+
+
 We can make a similar observation with multiplication. $2 \times 9$ gives the same _result_ as $9 \times 2$, but is distinct _operationally_. The former requires you to add together 9 copies of "2", whereas the latter requires you to add together 2 copies of "9". Commutativity gives you the freedom to choose which route to take.
 
 And again, it's easy to deduce this property by viewing numbers as sizes of finite sets. We can take the cartesian product and make a grid of all possible choices, and then count them up, or we can take the sizes individually, and then multiply the numbers together! Commutativity simply follows from transporting the commutativity of "product" along the "size" function.
@@ -52,7 +55,7 @@ Of course, here you can just view it as an example of covariance since the outpu
 ![image](https://github.com/user-attachments/assets/3bfd3ac5-1178-4325-8033-fa00a06e5135)
 
 
-Moreover, what's often useful is that covariance and contravariance can combine to give _invariance_. This is why we always write down measurements with both the unit and the number - the unit changes covariantly, the number changes contravariantly, and together they give an invariant notion: "length"! And with vectors, one can "contract" covariant and contravariant indices together.
+Moreover, what's often useful is that covariance and contravariance can combine to give _invariance_. This is why we always write down measurements with both the unit and the number - the unit changes covariantly, the number changes contravariantly, and together they give an invariant notion: "length"! With vectors, specifying both the basis and the components gives the invariant notion of "arrow in space".
 
 You also might remember contravariance from school when having to work with graph transformations. Translating a function $y = f(x)$ by, say, $5$ units to the right requires using the equation $y = f(x - 5)$. A diagram can help make this clearer: ![image](https://github.com/user-attachments/assets/297547f8-27e8-46af-b485-50e8cef8faa5)
 
