@@ -126,7 +126,9 @@ There's a few useful things we immediately get from this result:
 
 Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects, commutative diagrams and the Hom bifunctor throughout this piece.
 
-But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in category theory - the Yoneda Lemma. It turns out that this idea of "follow where the identity goes" is the core of the result. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
+But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in category theory - the Yoneda Lemma. Informally, it tells you that there's an equivalence between what an object "is" and what it "does", how it relates to other things, and how to use it. And as we saw, applying that idea to the identity matrix let us deduce the entire form of the row/column operation.
+
+It turns out that this idea of "follow where the identity goes" is the core of the result, even when you get to the formal proof of the lemma. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
 
 Category theory is normally thought of as very abstract. And indeed, working with generic categories, or understanding the full statement of the Yoneda Lemma, requires a lot of familiarity with abstraction. But this abstraction doesn't necessarily translate to _specific instances_ of categorical theorems or ideas, such as this matrix example.
 
