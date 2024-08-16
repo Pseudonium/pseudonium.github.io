@@ -136,4 +136,6 @@ Indeed, I'm a physicist. I don't really _like_ abstraction - I'm at home perform
 
 [Discuss this article on Reddit](https://www.reddit.com/r/math/comments/1et3y2d/making_category_theory_relatable/).
 
+Emily Riehl has a [talk](https://www.youtube.com/watch?v=SsgEvrDFJsM) where she approaches this from a much more categorical lens. If you want to get into category theory more broadly, I'd recommend Leinster's _Basic Category Theory_, and Bartosz Milewski's _Category Theory for Programmers_ (his YouTube series is excellent too).
+
 I'm planning to continue writing articles explaining Mathematics and Physics. If you'd like to support me, consider [buying me a coffee](https://ko-fi.com/pseudonium).
