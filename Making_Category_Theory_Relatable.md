@@ -105,23 +105,26 @@ We see that what the identity matrix "does" is relate to every other matrix in a
 
 ### Row Operations
 
-How about for row operations? The key insight is that we can implement row operations via "conjugating" a column operation by transpose, as shown:
+How about for row operations? These take in a matrix $A$ and produce a matrix $R(A)$, such that each _row_ of $R(A)$ is a linear combination of the rows of $A$, where again this linear combination cannot depend on $A$ but can vary from row to row. The definition of matrix multiplication won't particularly help us here, unfortunately - but there's still hope!
+
+The key insight is that we can implement row operations via "conjugating" a column operation by transpose, as shown:
 
 ![image](https://github.com/user-attachments/assets/0db1cc99-f664-44d1-a02c-d2c9597ee0d5)
 
+In other words, we can apply the row operation by first swapping rows and columns, then applying a related column operation (using the same linear combinations as the row operation), and then transposing again. We see that "contravariance" generalises this idea of conjugation, and gives us the formula $R(A) = C(A^T)^T$.
 
-We see that "contravariance" generalises this idea of conjugation. In any case, we have that if $B = AM$, then $R(B) = C(B^T)^T = C((AM)^T)^T = C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$. And so $R(A) = R(IA) = R(I) A$, meaning that row operations arise from multiplying on the left by a fixed matrix!
+In any case, we have that if $B = AM$, then $R(B) = C(B^T)^T = C((AM)^T)^T = C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$. And so $R(X) = R(IX) = R(I) X$, meaning that row operations arise from multiplying on the left by a fixed matrix!
 
 There's a few useful things we immediately get from this result:
 - Composing row/column operations can be implemented by multiplying the corresponding matrices.
 - By taking determinants, we see that any row/column operation only scales the determinant of the matrix by a constant factor, $\det(R(I))$ or $\det(C(I))$ respectively, when acting on square matrices.
 - A row/column operation is invertible if and only if the corresponding matrix is invertible.
-- Row and column operations commute with each other! This follows from the associativity of matrix multiplication.
+- Row and column operations commute with each other! Applying a row operation to $X$ means multiplying on the left by some $M$, and applying a column operation means multiplying on the right by some $N$. But $(MX)N = M(XN)$, since matrix multiplication is associative.
 
 ## The Yoneda Lemma
 
 
-Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects and the Hom functor throughout this piece.
+Hopefully, the proof did not feel too difficult. The hard part was more creating useful definitions, covariance and contravariance, that made the problem simple and transparent - which is often what category theory feels like. Indeed, we've seen hints of categorical ideas like initial objects, commutative diagrams and the Hom bifunctor throughout this piece.
 
 But perhaps most surprisingly, this result is a corollary of one of the first theorems you meet in category theory - the Yoneda Lemma. It turns out that this idea of "follow where the identity goes" is the core of the result. The abstract statement of Yoneda simply tells you the most general situation in which this trick works. But, as we saw, it's not necessary to know the abstraction to apply the trick!
 
