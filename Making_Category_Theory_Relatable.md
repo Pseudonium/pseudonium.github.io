@@ -41,7 +41,7 @@ And again, it's easy to deduce this property by viewing numbers as sizes of fini
 ![Multiplication Diagram](https://github.com/user-attachments/assets/223a4cd3-4e95-4985-9858-9a3be7d0ba9c)
 
 
-These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which let's us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives".
+These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which lets us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives".
 
 And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead. What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
 ## Contravariance
