@@ -69,6 +69,7 @@ So, contravariance is pretty similar to covariance - it's still the case that re
 
 ![image](https://github.com/user-attachments/assets/d2749b53-9c47-456a-b9b2-5fad16afcd88)
 
+I.e. if $a \leq b$, then $-b \leq -a$.
 
 Now that we've met covariance and contravariance, let's get back to matrices!
 
