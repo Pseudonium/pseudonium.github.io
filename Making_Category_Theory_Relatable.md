@@ -43,7 +43,7 @@ And again, it's easy to deduce this property by viewing numbers as sizes of fini
 
 These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which lets us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives". I like to think of the naming as saying that as the inputs vary, the outputs "co-vary" alongisde them, in a consistent way.
 
-And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead, like [1729-dimensional Fourier Transform](https://en.wikipedia.org/wiki/Galactic_algorithm#Integer_multiplication). What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
+And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead, like the [1729-dimensional Fourier Transform](https://en.wikipedia.org/wiki/Galactic_algorithm#Integer_multiplication). What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
 ## Contravariance
 
 After you get comfortable with arithmetic, you might try using numbers to describe real-world phenomena. Other than "size", another common way numbers get used is as _measurements_.
