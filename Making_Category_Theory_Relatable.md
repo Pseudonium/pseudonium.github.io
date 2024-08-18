@@ -43,12 +43,12 @@ And again, it's easy to deduce this property by viewing numbers as sizes of fini
 
 These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which lets us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives". I like to think of the naming as saying that as the inputs vary, the outputs "co-vary" alongisde them, in a consistent way.
 
-And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead. What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
+And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead, like [1729-dimensional Fourier Transform](https://en.wikipedia.org/wiki/Galactic_algorithm#Integer_multiplication). What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
 ## Contravariance
 
 After you get comfortable with arithmetic, you might try using numbers to describe real-world phenomena. Other than "size", another common way numbers get used is as _measurements_.
 
-Say you're measuring a stick. Given a unit of measurement, you get back a numerical value - say, centimetres gives 50. And given a different one, you get a different value - metres gives 0.5. There's a way to relate these inputs - a metre is 100 centimetres. And the way to relate the outputs "goes backwards" - 50 is 100 times 0.5.
+Say you're measuring a stick. Given a unit of measurement, you get back a numerical value - perhaps centimetres gives 50. And given a different unit, you get a different value - metres gives 0.5. There's a way to relate these inputs - a metre is 100 centimetres. And the way to relate the outputs "goes backwards" - 50 is 100 times 0.5.
 
 ![Measurement Diagram](https://github.com/user-attachments/assets/37e3d783-1348-43d5-a021-3c774718f233)
 
@@ -77,7 +77,7 @@ Now that we've met covariance and contravariance, let's get back to matrices!
 
 ### Column Operations
 
-It turns out it'll be a little easier to consider _column_ operations first - we'll then transpose our result to get the version for row operation.
+It turns out it'll be a little easier to consider _column_ operations first - we'll then transpose our result to get the version for row operations.
 
 So, a column operation takes in a matrix $A$, and outputs another matrix $C(A)$, such that each column of $C(A)$ is a linear combination of the columns of $A$. This linear combination is allowed to vary from column to column - for example, perhaps we swap the first two columns and leave all others unchanged. But it's not allowed to depend explicitly on $A$ itself.
 
