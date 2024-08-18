@@ -67,7 +67,7 @@ We see that the $x$-translation by $5$ units acts in the input - so, to make the
 
 So, contravariance is pretty similar to covariance - it's still the case that relations between inputs get mapped to relations between outputs. But there's a kind of "flipping" involved, similar to multiplying by $-1$ - as the inputs vary, the outputs "contra-vary" in a consistent way, hence the name. In fact, if we take our relations between inputs to be $\leq$, this is quite literally true:
 
-![image](https://github.com/user-attachments/assets/d2749b53-9c47-456a-b9b2-5fad16afcd88)
+![image](https://github.com/user-attachments/assets/2b3663ae-d4af-469f-ae79-a965cf6bf692)
 
 I.e. if $a \leq b$, then $-b \leq -a$.
 
