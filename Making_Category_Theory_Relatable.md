@@ -1,6 +1,6 @@
 # Making Category Theory Relatable
 
-#SoMEpi
+#[SoMEpi](https://some.3b1b.co/)
 
 Matrices are one of the first tools you meet in university math. They let you package together systems of linear equations, which can then be solved algorithmically with Gaussian elimination. This is a natural generalisation of the school-level treatment of simultaneous equations; you can implement addition and multiplication of equations as row operations on the corresponding matrix, reducing it to row echelon form.
 
