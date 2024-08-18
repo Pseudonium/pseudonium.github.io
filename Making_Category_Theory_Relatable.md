@@ -81,7 +81,7 @@ It turns out it'll be a little easier to consider _column_ operations first - we
 
 So, a column operation takes in a matrix $A$, and outputs another matrix $C(A)$, such that each column of $C(A)$ is a linear combination of the columns of $A$. This linear combination is allowed to vary from column to column - for example, perhaps we swap the first two columns and leave all others unchanged. But it's not allowed to depend explicitly on $A$ itself.
 
-It turns out that column operations are "relational", in the following sense. If there's a way to relate inputs $A$ and $B$, specifically $B = MA$, then there's a way to relate the outputs, so $C(B) = M C(A)$.
+It turns out that column operations are "covariant", in the following sense. If there's a way to relate inputs $A$ and $B$, specifically $B = MA$, then there's a way to relate the outputs, so $C(B) = M C(A)$.
 
 ![image](https://github.com/user-attachments/assets/8ec0c479-bd6e-4a97-9f10-029f0af7fe79)
 
@@ -101,7 +101,10 @@ And finally, by the definition of matrix multiplication, we can "pass M through 
 
 $$\lambda_{11} M [A]_1 + \dots + \lambda_{1n} M [A]_n = \lambda_{11} [MA]_1 + \dots + \lambda_{1n} [MA]_n = [C(MA)]_1 = [C(B)]_1$$, where we recall that $B = MA$.
 
-Extending this logic to all the other columns, we've successfully proven that $C(B) = C(MA) = M C(A)$!
+Extending this logic to all the other columns, we've successfully proven that $C(B) = C(MA) = M C(A)$! Note that the key ingredients in this proof were:
+1. Matrix multiplication is _defined_ so that "taking the $j$th column" is "covariant", in the sense we've laid out.
+2. Every column operation is a linear combination of these basic "taking the $j$th column" operations.
+3. Matrices preserve linear combinations, and so general column operations are covariant too!
 
 How does this help us? Well, now that we understand covariance, we're ready to employ a trick - we can write $X = XI$ for $I$ the identity matrix of the appropriate size, and $X$ our starting matrix. Then, using $M = X$ and $A = I$, we get $C(X) = C(X I) = X C(I)$. And that gives our result - the column operation is just right-multiplication by some matrix, and we find it by applying it to the identity matrix!
 
@@ -109,7 +112,7 @@ How does this help us? Well, now that we understand covariance, we're ready to e
 
 We see that what the identity matrix "does" is relate to every other matrix in a _unique_ way - in category theory, this would be called an "initial object". And that's what lets us describe the entire column operation by a single matrix - the result of the column operation on the identity matrix.
 
-This also explains why column operations are "relational". If we have $B = MA$, then $C(B) = B C(I) = (MA) C(I) = M (A C(I)) = M C(A)$, using the associativity of matrix multiplication!
+This gives another perspective on why column operations are covariant. If we have $B = MA$, then $C(B) = B C(I) = (MA) C(I) = M (A C(I)) = M C(A)$, using the associativity of matrix multiplication!
 
 ### Row Operations
 
