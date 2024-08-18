@@ -79,21 +79,21 @@ It turns out that column operations are "relational", in the following sense. If
 
 ![image](https://github.com/user-attachments/assets/8ec0c479-bd6e-4a97-9f10-029f0af7fe79)
 
-All we need to prove this are the definitions of column operations and matrix multiplication! Focusing on the first column, we have that $$[C(A)]\_1 = \lambda\_{11} [A]\_1 + \lambda\_{12} [A]\_2 + \dots + \lambda\_{1n} [A]\_n$$, where the bracket notation denotes the operation of taking the $j$th column. If we were swapping the first two columns, then we'd have $\lambda\_{12} = 1$ and $\lambda\_{1j} = 0$ otherwise, $\lambda\_{21} = 1$ and $\lambda\_{22} = 0$ otherwise. This just expresses the idea that the column operation consists of applying a linear combination to the columns of $A$.
+All we need to prove this are the definitions of column operations and matrix multiplication! Focusing on the first column, we have that $$[C(A)]_1 = \lambda_{11} [A]_1 + \lambda_{12} [A]_2 + \dots + \lambda_{1n} [A]_n$$, where the bracket notation denotes the operation of taking the $j$th column. If we were swapping the first two columns, then we'd have $\lambda_{12} = 1$ and $\lambda_{1j} = 0$ otherwise, $\lambda_{21} = 1$ and $\lambda_{22} = 0$ otherwise. This just expresses the idea that the column operation consists of applying a linear combination to the columns of $A$.
 
 The point is that this operation of "taking the $j$th column" interacts very nicely with matrix multiplication! We can express this in the following diagram:
 
 ![image](https://github.com/user-attachments/assets/76ff5a64-deba-4c02-80bf-5f5c6a7d0914)
 
-Indeed, matrix multiplication is _defined_ so that this diagram "commutes" - both ways of getting from the bottom-left corner to the top-right corner give the same _result_, even though the _operations performed_ are different. This lets us deduce that $$[MC(A)]_1 = M [C(A)]_1 = M (\lambda_{11} [A]_1 + \lambda_{12} [A]\_2 + \dots + \lambda_{1n} [A]_n)$$.
+Indeed, matrix multiplication is _defined_ so that this diagram "commutes" - both ways of getting from the bottom-left corner to the top-right corner give the same _result_, even though the _operations performed_ are different. This lets us deduce that $$[MC(A)]_1 = M [C(A)]_1 = M (\lambda_{11} [A]_1 + \lambda_{12} [A]_2 + \dots + \lambda_{1n} [A]_n)$$.
 
 But matrices, by definition, act linearly! So, we can distribute $M$ across the linear combination, and obtain:
 
-$$M (\lambda\_{11} [A]\_1 + \lambda\_{12} [A]\_2 + \dots + \lambda\_{1n} [A]\_n) = \lambda_{11} M [A]\_1 + \dots + \lambda\_{1n} M [A]\_n$$
+$$M (\lambda_{11} [A]_1 + \lambda_{12} [A]_2 + \dots + \lambda_{1n} [A]_n) = \lambda_{11} M [A]_1 + \dots + \lambda_{1n} M [A]_n$$
 
 And finally, by the definition of matrix multiplication, we can "pass M through the brackets", to finally get:
 
-$$\lambda_{11} M [A]\_1 + \dots + \lambda\_{1n} M [A]\_n = \lambda_{11} [MA]\_1 + \dots + \lambda\_{1n} [MA]\_n = [C(MA)]_1 = [C(B)]_1$$, where we recall that $B = MA$.
+$$\lambda_{11} M [A]_1 + \dots + \lambda_{1n} M [A]_n = \lambda_{11} [MA]_1 + \dots + \lambda_{1n} [MA]_n = [C(MA)]_1 = [C(B)]_1$$, where we recall that $B = MA$.
 
 Extending this logic to all the other columns, we've successfully proven that $C(B) = C(MA) = M C(A)$!
 
@@ -102,6 +102,8 @@ How does this help us? Well, now that we understand covariance, we're ready to e
 ![image](https://github.com/user-attachments/assets/f901c9f7-80d3-43ea-8df5-59b82d3f433e)
 
 We see that what the identity matrix "does" is relate to every other matrix in a _unique_ way - in category theory, this would be called an "initial object". And that's what lets us describe the entire column operation by a single matrix - the result of the column operation on the identity matrix.
+
+This also explains why column operations are "relational". If we have $B = MA$, then $C(B) = B C(I) = (MA) C(I) = M (A C(I)) = M C(A)$, using the associativity of matrix multiplication!
 
 ### Row Operations
 
