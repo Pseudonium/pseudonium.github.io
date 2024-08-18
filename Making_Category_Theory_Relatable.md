@@ -102,7 +102,8 @@ $$= \lambda_{11} M [A]_1 + \dots + \lambda_{1n} M [A]_n$$
 And finally, by the definition of matrix multiplication, we can "pass M through the brackets", to finally get:
 
 $$\lambda_{11} M [A]_1 + \dots + \lambda_{1n} M [A]_n$$
-$$= \lambda_{11} [MA]_1 + \dots + \lambda_{1n} [MA]_n = [C(MA)]_1 = [C(B)]_1$$, where we recall that $B = MA$.
+$$= \lambda_{11} [MA]_1 + \dots + \lambda_{1n} [MA]_n$$
+$$= [C(MA)]_1 = [C(B)]_1$$, where we recall that $B = MA$.
 
 Extending this logic to all the other columns, we've successfully proven that $C(B) = C(MA) = M C(A)$! Note that the key ingredients in this proof were:
 1. Matrix multiplication is _defined_ so that "taking the $j$th column" is "covariant", in the sense we've laid out.
@@ -115,7 +116,8 @@ How does this help us? Well, now that we understand covariance, we're ready to e
 
 We see that what the identity matrix "does" is relate to every other matrix in a _unique_ way - in category theory, this would be called an "initial object". And that's what lets us describe the entire column operation by a single matrix - the result of the column operation on the identity matrix.
 
-This gives another perspective on why column operations are covariant. If we have $B = MA$, then $C(B) = B C(I) = (MA) C(I) = M (A C(I)) = M C(A)$, using the associativity of matrix multiplication!
+This gives another perspective on why column operations are covariant. If we have $B = MA$, then $$C(B) = B C(I) = (MA) C(I)$$
+$$= M (A C(I)) = M C(A)$$, using the associativity of matrix multiplication!
 
 ### Row Operations
 
@@ -127,7 +129,8 @@ The key insight is that we can implement row operations via "conjugating" a colu
 
 In other words, we can apply the row operation by first swapping rows and columns, then applying a related column operation (using the same linear combinations as the row operation), and then transposing again. We see that "contravariance" generalises this idea of conjugation, and gives us the formula $R(A) = C(A^T)^T$.
 
-In any case, we have that if $B = AM$, then $R(B) = C(B^T)^T = C((AM)^T)^T = C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$. And so $R(X) = R(IX) = R(I) X$, meaning that row operations arise from multiplying on the left by a fixed matrix!
+In any case, we have that if $B = AM$, then $$R(B) = C(B^T)^T = C((AM)^T)^T$$
+$$= C(M^T A^T)^T = [M^T C(A^T)]^T = R(A) M$$. And so $R(X) = R(IX) = R(I) X$, meaning that row operations arise from multiplying on the left by a fixed matrix!
 
 There's a few useful things we immediately get from this result:
 - Composing row/column operations can be implemented by multiplying the corresponding matrices.
