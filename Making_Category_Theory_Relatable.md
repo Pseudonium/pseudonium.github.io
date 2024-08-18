@@ -85,7 +85,7 @@ The point is that this operation of "taking the $j$th column" interacts very nic
 
 ![image](https://github.com/user-attachments/assets/76ff5a64-deba-4c02-80bf-5f5c6a7d0914)
 
-Indeed, matrix multiplication is _defined_ so that this diagram "commutes" - both ways of getting from the bottom-left corner to the top-right corner give the same _result_, even though the _operations performed_ are different. This lets us deduce that $$[MC(A)]_1 = M [C(A)]_1 = M (\lambda\_{11} [A]\_1 + \lambda\_{12} [A]\_2 + \dots + \lambda\_{1n} [A]\_n)$$.
+Indeed, matrix multiplication is _defined_ so that this diagram "commutes" - both ways of getting from the bottom-left corner to the top-right corner give the same _result_, even though the _operations performed_ are different. This lets us deduce that $$[MC(A)]_1 = M [C(A)]_1 = M (\lambda_{11} [A]_1 + \lambda_{12} [A]\_2 + \dots + \lambda_{1n} [A]_n)$$.
 
 But matrices, by definition, act linearly! So, we can distribute $M$ across the linear combination, and obtain:
 
