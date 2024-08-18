@@ -41,7 +41,7 @@ And again, it's easy to deduce this property by viewing numbers as sizes of fini
 ![Multiplication Diagram](https://github.com/user-attachments/assets/223a4cd3-4e95-4985-9858-9a3be7d0ba9c)
 
 
-These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which lets us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives".
+These examples illustrate the concept of _covariance_. We consider functions that not only map inputs to outputs, but map _relations between inputs_ to _relations between outputs_ - which lets us transport ideas in one domain to ideas in another. It's a good notion of "translation between perspectives". I like to think of the naming as saying that as the inputs vary, the outputs "co-vary" alongisde them, in a consistent way.
 
 And that's great, because different perspectives are useful for different purposes! It's not exactly practical to carry out a large multiplication by drawing out an entire grid, after all - there are fast algorithms developed for numbers we can use instead. What matters is not having any One True Perspective, but instead having multiple, so long as we have this ability to _translate between them_.
 ## Contravariance
@@ -64,6 +64,11 @@ You also might remember contravariance from school when having to work with grap
 
 
 We see that the $x$-translation by $5$ units acts in the input - so, to make the arrows match up properly, we must apply the _inverse_ transformation first, subtracting $-5$. It's a general principle that functions are covariant in the output (transformations in the $y$ direction), and contravariant in the input (transformations in the $x$ direction).
+
+So, contravariance is pretty similar to covariance - it's still the case that relations between inputs get mapped to relations between outputs. But there's a kind of "flipping" involved, similar to multiplying by $-1$ - as the inputs vary, the outputs "contra-vary" in a consistent way, hence the name. In fact, if we take our relations between inputs to be $\leq$, this is quite literally true:
+
+![image](https://github.com/user-attachments/assets/d2749b53-9c47-456a-b9b2-5fad16afcd88)
+
 
 Now that we've met covariance and contravariance, let's get back to matrices!
 
