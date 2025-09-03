@@ -1,4 +1,7 @@
-# Making Category Theory Relatable
+---
+layout: post
+title: Making Category Theory Relatable
+---
 
 #[SoMEpi](https://some.3b1b.co/)
 

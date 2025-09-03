@@ -1,4 +1,6 @@
-# Pseudonium's Blog
+---
+title: About
+---
 
 Welcome! I just finished a masters degree in Mathematics, and will be starting a PhD in Condensed Matter Physics this October. I love it because it feels like I’m going to get to learn how to do magic in real life!
 
@@ -8,4 +10,4 @@ Outside that, I love playing video games, watching anime, playing frisbee, playi
 
 ## Articles
 
-- [Making Category Theory Relatable](https://pseudonium.github.io/Making_Category_Theory_Relatable)
+- [Making Category Theory Relatable]({% link _posts/2024-08-15-Making_Category_Theory_Relatable.md %})
