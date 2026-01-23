@@ -74,7 +74,7 @@ From [Products, Categorically](https://pseudonium.github.io/2026/01/18/Products_
 
 ![Maximum as a packager]({{ site.baseurl }}/images/Maximum-packager.png)
 
-This falls into the general pattern of how is-does duality manifests in mathematics, where you consider functions _induced_ by an object. We can also "comprehend" these predicates to get subsets, a la [Indexed-Fibred Duality](https://pseudonium.github.io/2026/01/10/Indexed_Fibred_Duality.html), $L = \{y \in X \mid y \leq x\}$ and $U = \{y \in X \mid x \leq y\}$. You might recognise these as the "lower" and "upper" sets corresponding to $x$.
+This falls into the general pattern of how is-does duality manifests in mathematics, where you consider functions _induced_ by an object. We can also "comprehend" these predicates to get subsets, a la [Indexed-Fibred Duality](https://pseudonium.github.io/2026/01/10/Indexed_Fibred_Duality.html), $$L = \{y \in X \mid y \leq x\}$$ and $$U = \{y \in X \mid x \leq y\}$$. You might recognise these as the "lower" and "upper" sets corresponding to $x$.
 
 That takes care of the points of our ordered set. What about the relationships? What does an assertion like $a \leq b$ "do", in this perspective? Well, analogously to how the "does" of a point was a function on points, the "does" of a relationship ends up being a function on _relationships_.
 
