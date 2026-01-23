@@ -5,7 +5,7 @@ title: Subset Images, Categorically
 
 ## Intersecting Problems
 
-In my recent article on [Why Preimages Preserve Subset Operations](https://pseudonium.github.io/2026/01/18/Products_Categorically.html), I explained that taking preimages of subsets can be viewed simply as function composition with predicates. The preservation of operations like intersection, union, complement, symmetric difference follows simply from the fact that precomposition commutes with postcomposition, i.e. associativity.
+In my recent article on [Why Preimages Preserve Subset Operations](https://pseudonium.github.io/2026/01/20/Preimages_Preserve_Subset_operations.html), I explained that taking preimages of subsets can be viewed simply as function composition with predicates. The preservation of operations like intersection, union, complement, symmetric difference follows simply from the fact that precomposition commutes with postcomposition, i.e. associativity.
 
 But what about _direct_ images, which, given a function $f : X \to Y$, map subsets of $X$ to subsets of $Y$? These don't have as nice an interpretation on predicates. If we have $$\varphi : X \to \{0, 1\}$$, the direct image operation is supposed to produce a new predicate $$\psi : Y \to \{0, 1\}$$:
 
@@ -129,3 +129,4 @@ It's much rarer to see this in practice, but there's one application which comes
 - The concepts we've discussed today are a special case of what's called a _galois connection_ - specifically, direct and inverse image form a monotone galois connection between the posets of subsets of the domain and codomain.
 - In turn, this is a special case of the notion of _adjoint functor_ - the fact that direct image preserves unions is then an instance of "left adjoints preserve colimits".
 - The idea of treating quantifiers as adjoints to substitution appears quite a lot in the internal logic of topoi.
+- In this article we've focused on preimages, since they behave the nicest with respect to subset operations. Direct images don't behave as well, but they do at least preserve unions. I discuss this more in [Subset Images, Categorically](https://pseudonium.github.io/2026/01/21/Subset_Images_Categorically.html)
