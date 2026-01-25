@@ -60,9 +60,9 @@ Some operations can be easier in one world than another. Matrix multiplication, 
 
 Let's get a little more concrete. For the remainder of this article, we'll restrict to the way in which Yoneda manifests for _ordered sets_. These definitions will be relevant:
 
-> A preoder is a set $X$ together with a relation $\leq \subset X \times X$ that is reflexive and transitive, so $\forall x \in X, x \leq x$ and $\forall x, y, z \in X, x \leq y \land y \leq z \implies x \leq z$.
+> A preoder is a set $X$ together with a relation $\leq \space \subset X \times X$ that is reflexive and transitive, so $\forall x \in X, x \leq x$ and $\forall x, y, z \in X, x \leq y \text{ and } y \leq z \implies x \leq z$.
 
-> A partial order is a preorder $(X, \leq)$ that is additionally antisymmetric, meaning $x \leq y \land y \leq x \implies x = y$.
+> A partial order is a preorder $(X, \leq)$ that is additionally antisymmetric, meaning $x \leq y \text{ and } y \leq x \implies x = y$.
 
 We've already seen quite a few examples of this structure - the natural numbers with $\leq$, the natural numbers with divisbility, subsets with inclusion. You could even take $X$ to be a set of propositions, where $p \leq q$ if and only if $p \implies q$.
 
@@ -110,43 +110,51 @@ We can do a similar thing with ordered sets! Sometimes it's helpful to consider 
 
 Indeed, the whole idea of Dedekind cuts, as a construction of real numbers, is to view them as "virtual" numbers that may be probed by/compared with ordinary rational numbers, via a comparison predicate "$q \leq \pi$". We then axiomatise the properties that such a virtual comparison predicate needs to satisfy, and identify $\mathbb{R}$ with the set of valid comparison predicates (alternatively, by turning predicates into subsets, with the set of dedekind cuts).
 
-In general, these virtual objects $v$ are defined purely by what they _do_, how they interact with elements of our base ordered set $X$. There are two ways we can specify them - a virtual comparison predicate $p(x) = (x \prec v)$, or a virtual comparison predicate $q(x) = (v \prec x)$:
+In general, these virtual objects $v$ are defined purely by what they _do_, how they interact with elements of our base ordered set $X$. There are two ways we can specify them:
+- A virtual object _over_ our ordered set $X$, via a virtual comparison predicate $p(x) = (x \prec v)$
+- A virtual object _under_ our ordered set $X$, via a virtual comparison predicate $q(x) = (v \prec x)$
 
 ![Virtual object with arrows in]({{ site.baseurl }}/images/virtual_object_in.png)
 
 ![Virtual object with arrows out]({{ site.baseurl }}/images/virtual_object_out.png)
 
-Another example of a virtual object is a _collection_ of objects from our base ordered set. For example, we can consider the pair $(a, b)$ as a virtual object, a "cloud" of two objects that we can probe by objects from our base set. In this case, we define $x \prec (a, b)$ by $x \leq a \text{ and } x \leq b$, as a predicate.
+Another example of a virtual object is a _collection_ of objects from our base ordered set. For example, we can consider the pair $(a, b)$ as a virtual object over $X$, a "cloud" of two objects that we can probe by objects from our base set. In this case, we define $x \prec (a, b)$ by $x \leq a \text{ and } x \leq b$, as a predicate. It also works as a virtual object under $X$ by defining $(a, b) \prec x$ by $a \leq x \text{ and } b \leq x$.
 
-What properties does such a virtual predicate need to satisfy? There's not really a way to make sense of "reflexivity", since the whole point is that $v$ might not be an object of our ordered set. However, we _can_ make sense of transitivity! Namely, if $x \prec v$ and $y \leq x$, then we should require that $y \prec v$ as well - in terms of the virtual predicate, this says $p(x) \land y \leq x \implies p(y)$. Similarly, if $v \prec x$ and $x \leq y$, we should have $v \prec y$ too, meaning $q(x) \land x \leq y \implies q(y)$. Much like distributions, we _define_ virtual objects this way, as virtual predicates satisfying one of these consistency checks, depending on their type.
+What properties does such a virtual predicate need to satisfy? There's not really a way to make sense of "reflexivity", since the whole point is that $v$ might not be an object of our ordered set. However, we _can_ make sense of transitivity! Namely, if $x \prec v$ and $y \leq x$, then we should require that $y \prec v$ as well - in terms of the virtual predicate, this says $p(x) \text{ and } y \leq x \implies p(y)$ for virtual objects over $X$. Similarly, if $v \prec x$ and $x \leq y$, we should have $v \prec y$ too, meaning $q(x) \text{ and } x \leq y \implies q(y)$ for virtual objects under $X$. Much like distributions, we _define_ virtual objects this way, as virtual predicates satisfying one of these consistency checks, depending on their type.
+
+Formally, then, the definition of virtual objects is as follows:
+
+> A virtual object _over_ $X$ consists of a predicate $p$ on $X$ such that $[y \leq x \text{ and } p(x)] \implies p(y)$. We may denote $p(x)$ by $x \prec v$ to write this condition as $[y \leq x \text{ and } x \prec v] \implies y \prec v$.
+
+> A virtual object _under_ $X$ consists of a predicate $q$ on $X$ such that $[q(x) \text{ and } x \leq y] \implies q(y)$. We may denote $q(x)$ by $v \prec x$ to write this condition as $[v \prec x \text{ and } x \leq y] \implies v \prec y$.
 
 ## Virtual Relationships
 
-What might it mean to have a relationship between two virtual objects $v$ and $w$? Say that we know what it means to say $x \prec v$ and $x \prec w$. While it's unclear what $v \prec w$ "is", it's clearer what it should _do_ - it'll ensure that $x \prec v \implies x \prec w$, for $x$ an element of our base ordered set $X$:
+What might it mean to have a relationship between two virtual objects $v$ and $w$ over $X$? Say that we know what it means to say $x \prec v$ and $x \prec w$. While it's unclear what $v \prec w$ "is", it's clearer what it should _do_ - it'll ensure that $x \prec v \implies x \prec w$, for $x$ an element of our base ordered set $X$:
 
-![Virtual relationships between virtual objects]({{ site.baseurl }}/images/virtual_relationship.png)
+![Virtual relationships between virtual objects over X]({{ site.baseurl }}/images/virtual_relationship.png)
 
-Thus, we _define_ relationships between such virtual objects via implication of predicates. If $p_0, p_1$ are the predicates for $v, w$ respectively, then $v \prec w$ is defined to mean $p_0(x) \implies p_1(x)$. A dual statement holds for virtual predicates of the other type:
+Thus, we _define_ relationships between such virtual objects via implication of predicates. If $p_0, p_1$ are the predicates for $v, w$ respectively, then $v \prec w$ is defined to mean $p_0(x) \implies p_1(x)$. A dual statement holds for virtual objects under $X$:
 
-![Virtual relationships between virtual objects of the other type]({{ site.baseurl }}/images/virtual_relationship_2.png)
+![Virtual relationships between virtual objects under X]({{ site.baseurl }}/images/virtual_relationship_2.png)
 
 In this case, if $q_0, q_1$ are the predicates for $v, w$ respectively, then $v \prec w$ is defined to mean $q_1(x) \implies q_0(x)$.
 
-This new ordering on virtual objects is then reflexive and transitive, which you can verify as an exercise. Thus, it "extends" the original ordered set by adding in all virtual objects. But where are the elements of our original ordered set? Well, it turns out we can _also_ view them as virtual objects!
+This new ordering on virtual objects (either over or under $X$) is then reflexive and transitive, which you can verify as an exercise. Thus, it "extends" the original ordered set by adding in all virtual objects. But where are the elements of our original ordered set? Well, it turns out we can _also_ view them as virtual objects!
 
-Namely, any $x \in X$ defines a virtual object $$x^*$$ just with its comparison predicate, with $$(y \prec x^*) := y \leq x$$. Dually we get $$x_*$$ with $$(x_* \prec y) := x \leq y$$. I like to think of these as "raising" and "lowering" the objects of $X$ to promote them to virtual objects, with any relationships coming along for the ride:
+Namely, any $x \in X$ defines a virtual object $$x^*$$ over $X$ just with its comparison predicate, with $$(y \prec x^*) := y \leq x$$. Dually we get a virtual $$x_*$$ under $X$ with $$(x_* \prec y) := x \leq y$$. I like to think of these as "raising" and "lowering" the objects of $X$ to promote them to virtual objects over/under $X$, with any relationships coming along for the ride:
 
 ![Raising an object to a virtual one]({{ site.baseurl }}/images/object_raise_virtual.png)
 
 ![Lowering an object to a virtual one]({{ site.baseurl }}/images/object_lower_virtual.png)
 
-Now, though, we appear to have a potential for confusion. Given an object $x$ and a virtual object $v$, we can compare them directly by $x \prec v$, or indirectly by $x^* \prec v$:
+Now, though, we appear to have a potential for confusion. Given an object $x$ and a virtual object $v$ over $X$, we can compare them directly by $x \prec v$, or indirectly by $x^* \prec v$:
 
 ![Object to virtual object confusion]({{ site.baseurl }}/images/object_to_virtual_confusion.png)
 
 However, it turns out that, thankfully, these are equivalent! Continuing the visual metaphor, we may "raise" and "lower" the relationships that $x$ has with other virtual objects. In fact, this statement is precisely the Baby Yoneda Lemma.
 
-> (Baby Yoneda Lemma): Let $X$ be a preorder, $x \in X$, and $v$ a virtual object with comparison predicate $p(y) = (y \prec v)$. Then $x \prec v$ if and only if $x^* \prec v$.
+> (Baby Yoneda Lemma): Let $X$ be a preorder, $x \in X$, and $v$ a virtual object over $X$. Then $x \prec v$ if and only if $x^* \prec v$. Dually, if $w$ is a virtual object under $X$, then $w \prec x$ if and only if $w \prec x_*$.
 
 The proof is simple. $x^* \prec v$ is equivalent to the statement $\forall y \in X . (y \prec x^*) \implies (y \prec v)$, by definition. And that's equivalent to $\forall y \in X. (y \leq x) \implies (y \prec v)$. Transitivity guarantees that $x \prec v$ is sufficient for this to hold - it's what the relationship $x \prec v$ "does", after all! Conversely, if this implication holds, then we can "follow the identity" by substituting $y = x$ to conclude $x \prec v$, so $x \prec v$ is also necessary.
 
@@ -154,19 +162,19 @@ So we see that, at least for preorders, the yoneda lemma is just a manifestation
 
 ## Applications
 
-Let's take the implication $x \leq \min(a, b) \implies x \leq a \land x \leq b$. Viewing $(a, b)$ as a virtual object, we see that this is just the statement $\min(a, b)^* \prec (a, b)$. By Yoneda, this is equivalent to saying $\min(a, b) \prec (a, b)$ i.e. $\min(a, b) \leq a$ and $\min(a, b) \leq b$! Note that we also have $(a, b) \prec \min(a, b)^*$, which we can't apply Yoneda to since it's the "wrong direction".
+Let's take the implication $x \leq \min(a, b) \implies x \leq a \land x \leq b$. Viewing $(a, b)$ as a virtual object over our preorder, we see that this is just the statement $\min(a, b)^* \prec (a, b)$. By Yoneda, this is equivalent to saying $\min(a, b) \prec (a, b)$ i.e. $\min(a, b) \leq a$ and $\min(a, b) \leq b$! Note that we also have $(a, b) \prec \min(a, b)^*$, which we can't apply Yoneda to since it's the "wrong direction".
 
-Now for floor and ceiling. Instead of viewing a real number $r$ as a virtual object on $\mathbb{Q}$, we can also view it as a virtual object on $\mathbb{Z}$, with the predicates $n \prec r$ and $r \prec n$ defined using the inclusion of $\mathbb{Z}$ into $\mathbb{R}$. So, $n \prec r$ is defined as $\iota(n) \leq r$, and $r \prec n$ as $r \leq \iota(n)$, for $\iota : \mathbb{Z} \to \mathbb{R}$ the inclusion.
+Now for floor and ceiling. Instead of viewing a real number $r$ as a virtual object on $\mathbb{Q}$, we can also view it as a virtual object on $\mathbb{Z}$, with the predicates $n \prec r$ and $r \prec n$ defined using the inclusion of $\mathbb{Z}$ into $\mathbb{R}$. So, $n \prec r$ is defined as $\iota(n) \leq r$, and $r \prec n$ as $r \leq \iota(n)$, for $\iota : \mathbb{Z} \to \mathbb{R}$ the inclusion. These realise $r$ as a virtual object over/under $\mathbb{Z}$, respectively.
 
-It turns out that we can always _represent_ these virtual objects by actual objects! Taking $\pi$ as an example, $n \prec \pi \iff n \leq 3$, and $\pi \prec n \iff 4 \leq n$. Thus, if we focus on arrows _into_ $\pi$, we may identify it with $3$, since we have $$\pi^* \prec 3^*$$ and $$3^* \prec \pi^*$$, which by yoneda says $$3 \prec \pi^*$$. On the other hand, if we focus on arrows _out of_ $\pi$, we can identify it with $4$, since we have $$4_* \prec \pi_*$$ and $$\pi_* \prec 4_*$$, which by yoneda says $$\pi_* \prec 4$$.
+It turns out that we can always _represent_ these virtual objects by actual objects! Taking $\pi$ as an example, $n \prec \pi \iff n \leq 3$, and $\pi \prec n \iff 4 \leq n$. Thus, if we view $\pi$ as a virtual object _over_ $\mathbb{Z}$, we may identify it with $3$, since we have $$\pi^* \prec 3^*$$ and $$3^* \prec \pi^*$$, which by yoneda says $$3 \prec \pi^*$$. On the other hand, if we view $\pi$ as a virtual object _under_ $\mathbb{Z}$, we can identify it with $4$, since we have $$4_* \prec \pi_*$$ and $$\pi_* \prec 4_*$$, which by yoneda says $$\pi_* \prec 4$$.
 
-For a general real number $r$, these correspond to "floor" and "ceiling". Arrows into $r$ identify it with $\lfloor r \rfloor$, and arrows out of $r$ identify it with $\lceil r \rceil$.
+For a general real number $r$, these correspond to "floor" and "ceiling". Viewing $r$ as a virtual object over $\mathbb{Z}$ identifies it with $\lfloor r \rfloor$, and viewing it as a virtual object under $\mathbb{Z}$ identifies it with $\lceil r \rceil$.
 
 A similar story happens for "interior" and "closure" operations. We can view an arbitrary subset $S$ of a topological space as a virtual object over the collection of open sets, defining $U \prec S$ if and only if $\iota(U) \subset S$, where $\iota$ is the inclusion of open subsets into all subsets. The point of the interior is to _represent_ $U \prec S$ by an ordinary open set $\text{Int}(S)$, so that $\iota(U) \subset S \iff U \subset \text{Int}(S)$. You can then apply Yoneda by "following the identity" to show $U \subset \text{Int}(\iota(U))$ and $\iota(\text{Int}(S)) \subset S$.
 
-Similarly, taking the inclusion of _closed_ sets into all subsets, the point of the closure is to _represent_ $S \prec C$ by an ordinary closed set $\bar S$, so that $S \subset \iota(C) \iff \bar S \subset C$.
+Similarly, taking the inclusion of _closed_ sets into all subsets, we can view $S$ as a virtual object under the collection of closed sets, defining $S \prec C$ if and only if $S \subset \iota(C)$. Then the point of the closure is to _represent_ $S$ by an ordinary closed set $\bar S$, so that $S \subset \iota(C) \iff \bar S \subset C$.
 
-We've seen a similar construction relating image and preimage, in fact. Given a function $f : X \to Y$, we get a monotone preimage map $f^{-1} : P(Y) \to P(X)$. This lets you view a subset $A \subset X$ as a virtual object over $P(Y)$, defining $A \prec B \iff A \subset f^{-1}(B)$ for $B \subset Y$. The direct image then lets you _represent_ this virtual object by an actual object - the direct image $f(A) \subset Y$! Since we know $f(A) \subset B \iff A \subset f^{-1}(B)$. As an exercise, can you represent the virtual object $B \prec A := f^{-1}(B) \subset A$ as an actual object $f^\sharp(A) \in P(B)$? I.e. such that $f^{-1}(B) \subset A \iff B \subset f^\sharp(A)$.
+We've seen a similar construction relating image and preimage, in fact. Given a function $f : X \to Y$, we get a monotone preimage map $f^{-1} : P(Y) \to P(X)$. This lets you view a subset $A \subset X$ as a virtual object under $P(Y)$, defining $A \prec B \iff A \subset f^{-1}(B)$ for $B \subset Y$. The direct image then lets you _represent_ this virtual object by an actual object - the direct image $f(A) \subset Y$! Since we know $f(A) \subset B \iff A \subset f^{-1}(B)$. As an exercise, can you represent the virtual object $B \prec A := f^{-1}(B) \subset A$ of $A$ over $P(Y)$ as an actual object $f^\sharp(A) \in P(B)$? I.e. such that $f^{-1}(B) \subset A \iff B \subset f^\sharp(A)$.
 
 Finally, here's a trick you can use to compute the actual object corresponding to a virtual object, if it exists. For the closure of $S$, we want $S \subset \iota(C) \iff \bar S \subset C$, for $C$ a closed set. How about $C \subset \bar S$? Using yoneda, we can view this "actively" as saying $\forall C' \text{ closed }, \bar S \subset C' \implies C \subset C'$. This is equivalent to $\forall C' \text{ closed }, S \subset \iota(C') \implies C \subset C'$. Thus, if $C \subset \bar S$ is equivalent to saying $C$ is contained within every $C'$ with $S \subset \iota(C')$.
 
