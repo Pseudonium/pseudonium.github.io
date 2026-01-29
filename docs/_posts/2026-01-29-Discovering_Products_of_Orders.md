@@ -17,7 +17,7 @@ However, we haven't yet defined what a "morphism between ordered sets" should be
 
 Often we abuse notation and just write $a \leq a' \implies f(a) \leq f(a')$. Thus, the goal of our categorical product will be to compress two monotone maps into a single one.
 
-First, we should probably see some examples of monotone maps to get some intuition. Luckily, we've secretly been working with them for quite a few articles now - virtual objects! Specifically, let $2$ denote the ordered set $$\{0, 1\}$$ with $0 \leq 1$ (together with reflexibity). Then:
+First, we should probably see some examples of monotone maps to get some intuition. Luckily, we've secretly been working with them for quite a few articles now - virtual objects! Specifically, let $2$ denote the ordered set $$\{0, 1\}$$ with $0 \leq 1$ (together with reflexivity). Then:
 - A virtual object $v$ _over_ an ordered set $X$ is a monotone map $X^\text{op} \to 2$, where $X^\text{op}$ is the ordered set obtained from $X$ by reversing the order.
 - A virtual object $w$ _under_ an ordered set $X$ is a monotone map $X \to 2$.
 
