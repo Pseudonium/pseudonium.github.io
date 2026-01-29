@@ -170,6 +170,47 @@ Here's the idea:
 
 This allows us to define, for example, the "join" of two subgroups $H, K$ of a group $G$, even though the set-theoretic join $H \cup K$ is almost never a subgroup. We simply take the intersection of all subgroups $L \leq G$ such that $H \subset L, K \subset L$. This turns out to just be the subgroup _generated_ by $H$ and $K$!
 
+### Representing the Dual
+
+There's another way to interpret the computation above in terms of taking the "dual" of a virtual object. Recall from [Baby Yoneda 2](https://pseudonium.github.io/2026/01/26/Baby_Yoneda_2_Representable_Boogaloo.html) that we can convert a virtual object $v$ above $X$ to $$v_*$$ below $X$ as follows:
+
+![What a virtual relationship from v to y should do]({{ site.baseurl }}/images/virtual_relationship_wrong_does.png)
+
+![Expressing this virtual relationship via raising y]({{ site.baseurl }}/images/virtual_relationship_wrong_corrected.png)
+
+So we can define $$v_* \prec y := v \prec y^*$$, i.e. that $$\forall x \in X, x \prec v \implies x \leq y$$. We may regard this as the "dual" of the virtual object $v$.
+
+In general, it turns out that this "dual" behaves quite a bit better than $v$ itself. For example, we have that:
+
+> The dual of a virtual object $v$ over $X$ respects meets.
+
+The proof is as follows:
+- Take some $S \subset X$, with corresponding meet $$\bigwedge_{s \in S} s$$.
+- Then, $$v_* \prec \bigwedge_{s \in S} s := \forall x \in X, x \prec v \implies x \leq \bigwedge_{s \in S} s$$
+- But, by definition of the meet, $$x \leq \bigwedge_{s \in S} s \iff \forall s \in S, x \leq s$$.
+- So, we can rewrite $$v_* \prec \bigwedge_{s \in S} s$$ as $$\forall x \in X, x \prec v \implies (\forall s \in S, x \leq s)$$, which is equivalent to $$\forall x \in X, \forall s \in S, x \prec v \implies x \leq s$$
+- But, swapping the order of the quantifiers, this is equivalent to $$\forall s \in S, v_* \prec s$$. Thus $$v_* \prec \bigwedge_{s \in S} \iff \forall s \in S, v_* \prec s$$, meaning $$v_*$$ respects meets.
+
+Since this is a necessary condition for representability, $$v_*$$ is more likely to be representable than an arbitrary $$v$$. In fact, we have the following result:
+
+> If $X$ has all joins, then the dual of a virtual object $v$ over $X$ is always representable.
+
+Again, the proof is as follows:
+- By definition, $$v_* \prec y := \forall x \in X, x \prec v \implies x \leq y$$. We want to find some $r \in X$ such that $$v_* \prec y \iff r \leq y$$.
+- Set $$S = \{x \in X \mid x \prec v\}$$. Then we can rewrite $$v_* \prec y$$ as $$\forall s \in S, s \leq y$$.
+- But we can use a join to "package" all these relations into a single relation! Namely, $$\forall s \in S, s \leq y \iff (\bigvee_{s \in S} s) \leq y$$.
+- Thus, applying Baby Yoneda, $$v_*$$ is represented by $$\bigvee_{s \in S} s = \bigvee_{x \in X, x \prec v} x$$.
+
+This gives another reason why $$v_*$$ repsects meets, given that $X$ has enough joins - it's representable! And it turns out that representations of $$v_*$$ are closely tied to representations of $$v$$:
+
+- Let $v$ be a virtual object over $X$ that is representable. Then $$v_*$$ is representable. Conversely, if $$v_*$$ is representable and $v$ respects joins, then $v$ is representable.
+
+For the forwards direction, suppose $v$ is represented by $r$, so that $x \prec v \iff x \leq r$. The definition of $$v_* \prec y$$ is $\forall x \in X, x \prec v \implies x \leq y$. Using the representation of $v$, we obtain $\forall x \in X, x \leq r \implies x \leq y$. But now we can apply Baby Yoneda! This is equivalent to $r \leq y$. Thus $$v_* \prec y \iff r \leq y$$, and so $$v_*$$ is represented by $r$.
+
+For the other direction, we essentially copy the proof from the preceding section. Suppose $$v_*$$ is represented by $r$, so that $$v_* \prec y \iff r \leq y$$. Again letting $$S = \{x \in X \mid x \prec v\}$$, we have that $\forall s \in S, s \leq y \iff r \leq y$. Thus, $r$ is a join of $S$! Importantly, this holds even if $X$ doesn't have _all_ joins - representability of $$v_*$$ guarantees the existence of the join of $S$.
+
+Applying Baby Yoneda, we know that $$v_* \prec r$$, which means $$v \prec r^*$$. Thus, to check representability, it suffices to check $$r^* \prec v$$, which by Baby Yoneda is equivalent to $$r \prec v$$. Since $r$ is the join of $S$, we just need $$\bigvee_{s \in S} s \prec v$$. But since $v$ respects joins, this is equivalent to $\forall s \in S, s \prec v$. This is true by the _definition_ of $S$, since $S$ consists precisely of those $x \in X$ with $x \prec v$.
+
 ## Why are these called "Limits"?
 
 In more general category theory, meets and joins generalise to _limits_ and _colimits_ respectively. The terminology evokes the notion of limit from real analysis - for example, if we have a sequence $(a_n)$, then it converges to a limit $L$ if and only if $$\forall \epsilon > 0, \exists N \in \mathbb{N}, \forall n \geq N, \mid a_n - L \mid < \epsilon$$.
